@@ -36,3 +36,6 @@ Desktop.ini
 
 # Logs
 *.log
+# TTS 產生的暫存檔
+temp_*.mp3
+*.tmp
