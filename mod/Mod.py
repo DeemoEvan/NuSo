@@ -786,9 +786,6 @@ class MyCommands(commands.Cog):
         self.save_active_fishers(all_fishers)
 
     def save_active_fishers(self, all_fishers):
-        if not all_fishers:
-            print("[釣魚] save_active_fishers 偵測到空字典，停止存檔以防資料遺失！")
-            return
         # datetime 轉字串
         serialized = {}
         for uid, info in all_fishers.items():
@@ -806,67 +803,11 @@ class MyCommands(commands.Cog):
         all_fishers.pop(str(user_id), None)
         self.save_active_fishers(all_fishers)
 
-    def load_keywords(self):
-        if not os.path.exists(self.KEYWORDS_PATH):
-            with open(self.KEYWORDS_PATH, "w", encoding="utf-8") as f:
-                f.write("大紅包\n")
-        try:
-            with open(self.KEYWORDS_PATH, "r", encoding="utf-8") as f:
-                return [line.strip() for line in f if line.strip()]
-        except Exception as e:
-            print(f"[紅包] 讀取 keywords.txt 失敗: {e}")
-            return ["大紅包"]
 
-    def load_claims(self):
-        if not os.path.exists(self.CLAIM_PATH):
-            self._save_json(self.CLAIM_PATH, {})
-        return self._load_json(self.CLAIM_PATH)
 
-    def save_claims(self, claims):
-        self._save_json(self.CLAIM_PATH, claims)
 
-    def get_all_fishers(self):
-        try:
-            if os.path.exists(self.DATA_PATH):
-                with open(self.DATA_PATH, "r", encoding="utf-8") as f:
-                    raw = json.load(f)
-                    for uid, info in raw.items():
-                        if "end_time" in info and isinstance(info["end_time"], str):
-                            try:
-                                info["end_time"] = datetime.fromisoformat(info["end_time"])
-                            except Exception:
-                                pass
-                        if "start_time" in info and isinstance(info.get("start_time"), str):
-                            try:
-                                info["start_time"] = datetime.fromisoformat(info["start_time"])
-                            except Exception:
-                                pass
-                    return raw
-        except Exception:
-            pass
-        return {}
 
-    def update_fisher(self, user_id, data):
-        try:
-            all_fishers = self.get_all_fishers()
-            # datetime 轉字串
-            for k in ("start_time", "end_time"):
-                if k in data and isinstance(data[k], datetime):
-                    data[k] = data[k].isoformat()
-            all_fishers[str(user_id)] = data
-            self.save_active_fishers(all_fishers)
-        except Exception as e:
-            print(f"[釣魚] update_fisher 寫入失敗: {e}")
 
-    def remove_fisher(self, user_id):
-        """刪除釣魚記錄，使用正確的序列化方法"""
-        try:
-            all_fishers = self.get_all_fishers()
-            all_fishers.pop(str(user_id), None)
-            self.save_active_fishers(all_fishers)
-            print(f"✅ 已刪除玩家 {user_id} 的釣魚記錄")
-        except Exception as e:
-            print(f"❌ 刪除釣魚記錄失敗: {e}")
 
     def _find_bank_cog(self):
 
@@ -892,7 +833,6 @@ class MyCommands(commands.Cog):
         # 優先從 bot.get_cog 獲取，若還沒載入則設為 None
         self.bank = self._find_bank_cog()
         self.active_robbers = set()
-        self.DATA_PATH = os.path.join(current_dir, "active_fishers.json")
         self.BJ_CONTROL_PATH = os.path.join(current_dir, "blackjack_control.json")
         self.voice_event_log = deque(maxlen=20000)
         self.tracked_log_channels = self._load_tracked_log_channels()
@@ -903,12 +843,10 @@ class MyCommands(commands.Cog):
         print("[Path Debug] cwd:", os.getcwd())
         print("[Path Debug] idiom_file:", self.idiom_file)
         print("[Path Debug] stock_cache_file:", self.stock_cache_file)
-        print("[Path Debug] DATA_PATH:", self.DATA_PATH)
         print("[Path Debug] BJ_CONTROL_PATH:", self.BJ_CONTROL_PATH)
-        self.load_active_fishers()
 
     def _load_bj_control(self):
-        """讀取 C:\\Peter\\TR and M\\Dc_Bot\\mod\\blackjack_control.json"""
+        """讀取 blackjack_control.json"""
         try:
             if os.path.exists(self.BJ_CONTROL_PATH):
                 with open(self.BJ_CONTROL_PATH, "r", encoding="utf-8") as f:
@@ -918,7 +856,7 @@ class MyCommands(commands.Cog):
         return {}
 
     def _save_bj_control(self, data):
-        """寫入 C:\\Peter\\TR and M\\Dc_Bot\\mod\\blackjack_control.json"""
+        """寫入 blackjack_control.json"""
         try:
             with open(self.BJ_CONTROL_PATH, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
@@ -1040,44 +978,7 @@ class MyCommands(commands.Cog):
         embed.set_footer(text=f"由 {interaction.user.display_name} 點播", icon_url=interaction.user.display_avatar.url)
         return embed
 
-    def save_active_fishers(self, all_fishers):
-        """將完整掛機資料儲存至 JSON 檔案，防止覆蓋其他玩家"""
-        if not all_fishers:
-            print("[釣魚] save_active_fishers 偵測到空字典，停止存檔以防資料遺失！")
-            return
-        # datetime 轉字串
-        serialized = {}
-        for uid, info in all_fishers.items():
-            data = {}
-            for k, v in info.items():
-                if isinstance(v, datetime):
-                    data[k] = v.isoformat()
-                else:
-                    data[k] = v
-            serialized[str(uid)] = data
-        self._save_json(self.FISHER_PATH, serialized)
 
-    def load_active_fishers(self):
-        """從 JSON 檔案載入掛機資料"""
-        if os.path.exists(self.DATA_PATH):
-            try:
-                with open(self.DATA_PATH, "r", encoding="utf-8") as f:
-                    raw = json.load(f)
-                    for uid_str, info in raw.items():
-                        # 轉回 datetime（若包含 start_time 與 end_time）
-                        if "end_time" in info and isinstance(info["end_time"], str):
-                            try:
-                                info["end_time"] = datetime.fromisoformat(info["end_time"])
-                            except Exception:
-                                pass
-                        if "start_time" in info and isinstance(info.get("start_time"), str):
-                            try:
-                                info["start_time"] = datetime.fromisoformat(info["start_time"])
-                            except Exception:
-                                pass
-                        # self.active_fishers[int(uid_str)] = info  # 不再用記憶體快取
-            except Exception as e:
-                print(f"載入釣魚存檔失敗: {e}")
 
     def cleanup_temp_file(self, file_path):
         """播放完後的清理工作"""
@@ -1809,7 +1710,6 @@ class MyCommands(commands.Cog):
         total_cost = int(current_price * 數量)
         gid, uid = str(interaction.guild.id), str(interaction.user.id)
 
-        bank.users = bank.load_data()
         user_coin = bank.users.get(gid, {}).get(uid, {}).get("coin", 0)
 
         if user_coin < total_cost:
@@ -1844,7 +1744,6 @@ class MyCommands(commands.Cog):
         bank = self.bot.get_cog('BankMod')
         if not bank: return await interaction.followup.send("銀行系統異常。")
 
-        bank.users = bank.load_data()
         gid, uid = str(interaction.guild.id), str(interaction.user.id)
         user_data = bank.users.get(gid, {}).get(uid, {})
         user_stocks = user_data.get("stocks", {})
@@ -1922,7 +1821,6 @@ class MyCommands(commands.Cog):
         gid, uid = str(interaction.guild.id), str(interaction.user.id)
 
         # 2. 檢查持股
-        bank.users = bank.load_data()
         user_data = bank.users.get(gid, {}).get(uid, {})
         user_stocks = user_data.get("stocks", {})
 
@@ -2050,7 +1948,6 @@ class MyCommands(commands.Cog):
         if not bank:
             return await interaction.followup.send("❌ 銀行系統模組未啟動。")
 
-        bank.users = bank.load_data()
         user_data = bank.add_stats(interaction.guild.id, interaction.user.id, coin=0)
 
         coin = user_data.get("coin", 0)

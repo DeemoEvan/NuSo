@@ -78,8 +78,11 @@ class BankMod(commands.Cog):
         return {}
 
     def save_data(self):
-        with open(self.data_file, "w", encoding="utf-8") as f:
+        # 先寫暫存檔再 os.replace：寫到一半當掉不會留下半截 JSON 把所有人的錢洗掉
+        tmp = self.data_file + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
             json.dump(self.users, f, indent=4, ensure_ascii=False)
+        os.replace(tmp, self.data_file)
 
     # 封裝增加金幣與經驗的邏輯，方便跨模組呼叫
     def add_stats(self, guild_id, user_id, coin=0, exp=0):
@@ -440,8 +443,6 @@ class BankMod(commands.Cog):
         # 執行加錢邏輯
         gid = str(interaction.guild.id)
         uid = str(member.id) # 使用目標成員的 ID
-        # 重新讀取確保資料即時
-        self.users = self.load_data()
         user_data = self.add_stats(interaction.guild.id, member.id, coin=amount)
         self.save_data()
         await interaction.response.send_message(
@@ -452,8 +453,6 @@ class BankMod(commands.Cog):
     @app_commands.command(name="daily", description="每日簽到")
     @app_commands.guild_only()
     async def daily(self, interaction: discord.Interaction):
-        # 1. 強制讀取最新 JSON，防止手動修改檔案後資料不同步
-        self.users = self.load_data()
 
         gid = str(interaction.guild.id)
         uid = str(interaction.user.id)
@@ -488,7 +487,6 @@ class BankMod(commands.Cog):
     @app_commands.command(name="hourly", description="每小時領取一次零用錢 (整點重置)")
     @app_commands.guild_only()
     async def hourly(self, interaction: discord.Interaction):
-        self.users = self.load_data()
 
         # 1. 取得目前整點
         now = datetime.now()

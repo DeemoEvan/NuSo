@@ -119,7 +119,7 @@ class MyBot(commands.Bot):
 # --- 啟動入口 ---
 if __name__ == "__main__":
     bot = MyBot()
-    token_path = r"bot_token.txt"
+    token_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bot_token.txt")
     try:
         with open(token_path, "r") as f:
             token = f.read().strip()
