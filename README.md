@@ -1,2 +1,2 @@
-# Nuro
-Discord機器人
+# NuSo
+機器人

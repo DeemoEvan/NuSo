@@ -1,0 +1,13 @@
+discord.py 
+aiohttp 
+yt-dlp 
+edge-tts
+pygame 
+pyaudio 
+wave 
+numpy 
+requests 
+transformers 
+peft
+bitsandbytes
+accelerate

@@ -1,0 +1,13 @@
+{
+    "2026-03-21": {
+        "NVDA": {
+            "name": "NVIDIA Corporation",
+            "ticker": "NVDA",
+            "price": 172.7,
+            "change": -5.86,
+            "percent": -3.28181,
+            "currency": "USD",
+            "update_time": "19:30:41"
+        }
+    }
+}

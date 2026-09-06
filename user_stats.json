@@ -1,0 +1,527 @@
+{
+    "1456936587651842061": {
+        "1170599058717560875": {
+            "coin": 10021394996,
+            "exp": 79,
+            "level": 2,
+            "stocks": {},
+            "last_checkin": "2026-02-20",
+            "stock_costs": {},
+            "last_hourly": 1771068824.713445,
+            "last_hourly_slot": 1771131600,
+            "loan": 0,
+            "boat_level": 2,
+            "rod_level": 1,
+            "blackjack_pnl": 322,
+            "blackjack_games": 58,
+            "blackjack_wins": 21
+        },
+        "1449416191272816650": {
+            "coin": 1015315745,
+            "exp": 31,
+            "level": 2,
+            "stocks": {
+                "NVDA": 100
+            },
+            "last_hourly_slot": 1771131600,
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 20,
+            "rod_level": 20,
+            "blackjack_pnl": 100,
+            "blackjack_wins": 3,
+            "blackjack_games": 6
+        },
+        "740546087022100551": {
+            "coin": 10038,
+            "exp": 56,
+            "level": 2,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0
+        },
+        "763033832227078176": {
+            "coin": 15000,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "last_hourly_slot": 1771592400
+        }
+    },
+    "1446838276249096228": {
+        "1170599058717560875": {
+            "coin": 408859,
+            "exp": 134,
+            "level": 7,
+            "stocks": {
+                "NVDA": 1001,
+                "AAPL": 1000
+            },
+            "last_checkin": "2026-02-21",
+            "last_hourly": 1771128262.852827,
+            "last_hourly_slot": 1771686000,
+            "loan": 0,
+            "boat_level": 20,
+            "rod_level": 20,
+            "blackjack_pnl": -41828934,
+            "blackjack_games": 50,
+            "blackjack_wins": 38,
+            "stock_costs": {
+                "NVDA": 379
+            },
+            "bank_balance": 9999635357000
+        },
+        "740546087022100551": {
+            "coin": 559071,
+            "exp": 505,
+            "level": 7,
+            "stocks": {
+                "NVDA": 10
+            },
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "blackjack_wins": 2,
+            "blackjack_pnl": 100000,
+            "blackjack_games": 3
+        },
+        "763033832227078176": {
+            "coin": 545394944,
+            "exp": 28,
+            "level": 10,
+            "stocks": {
+                "NVDA": 10
+            },
+            "last_hourly": 1771127485.542289,
+            "last_checkin": "2026-04-13",
+            "last_hourly_slot": 1776085200,
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 20,
+            "rod_level": 20,
+            "blackjack_pnl": 10219944843,
+            "blackjack_games": 727,
+            "blackjack_wins": 327,
+            "fixed_deposits": [
+                {
+                    "principal": 59000000000,
+                    "term_days": 6,
+                    "rate": 1.2,
+                    "opened_at": "2026-04-23T20:14:55.256025",
+                    "mature_at": "2026-04-29T20:14:55.256025"
+                }
+            ],
+            "fish_skill_level": 20,
+            "fish_skill_exp": 100,
+            "fish_dex": {}
+        },
+        "868361854748074065": {
+            "coin": 5289020,
+            "exp": 706,
+            "level": 8,
+            "stocks": {},
+            "last_hourly": 1771090016.968883,
+            "last_checkin": "2026-02-15",
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 2,
+            "last_hourly_slot": 1772355600
+        },
+        "1096014500668375090": {
+            "coin": 132132571,
+            "exp": 0,
+            "level": 4,
+            "stocks": {},
+            "last_hourly": 1771077623.632544,
+            "last_checkin": "2026-04-30",
+            "last_hourly_slot": 1777633200,
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 20,
+            "rod_level": 20,
+            "blackjack_pnl": 68934009,
+            "blackjack_games": 767,
+            "blackjack_wins": 329,
+            "fixed_deposits": [
+                {
+                    "principal": 534663544595,
+                    "term_days": 6,
+                    "rate": 1.2,
+                    "opened_at": "2026-04-28T08:31:48.244917",
+                    "mature_at": "2026-05-04T08:31:48.244917"
+                }
+            ],
+            "fish_skill_level": 20,
+            "fish_skill_exp": 100,
+            "fish_dex": {}
+        },
+        "1234077475173306439": {
+            "coin": 803997691,
+            "exp": 405,
+            "level": 6,
+            "stocks": {},
+            "last_checkin": "2026-03-11",
+            "last_hourly": 1771127471.376333,
+            "last_hourly_slot": 1773572400,
+            "loan": 0,
+            "bank_balance": 500000000,
+            "boat_level": 20,
+            "rod_level": 20,
+            "blackjack_wins": 521,
+            "blackjack_pnl": -1133329732,
+            "blackjack_games": 1173,
+            "fixed_deposits": [
+                {
+                    "principal": 17000000000,
+                    "term_days": 7,
+                    "rate": 1.2,
+                    "opened_at": "2026-04-23T20:19:29.041016",
+                    "mature_at": "2026-04-30T20:19:29.041016"
+                }
+            ],
+            "fish_skill_level": 20,
+            "fish_skill_exp": 100,
+            "fish_dex": {}
+        },
+        "665170783181733898": {
+            "coin": 593836892,
+            "exp": 60,
+            "level": 4,
+            "stocks": {},
+            "last_checkin": "2026-03-01",
+            "last_hourly": 1771090144.616661,
+            "last_hourly_slot": 1772460000,
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 20,
+            "rod_level": 20,
+            "blackjack_pnl": -562002972,
+            "blackjack_games": 197,
+            "blackjack_wins": 82,
+            "fixed_deposits": [
+                {
+                    "principal": 11216488242,
+                    "term_days": 7,
+                    "rate": 1.2,
+                    "opened_at": "2026-04-18T22:43:56.467062",
+                    "mature_at": "2026-04-25T22:43:56.467062"
+                }
+            ],
+            "fish_skill_level": 17,
+            "fish_skill_exp": 36,
+            "fish_dex": {}
+        },
+        "1358396241440149675": {
+            "coin": 2648120704,
+            "exp": 240,
+            "level": 3,
+            "stocks": {},
+            "last_hourly": 1771128539.544994,
+            "last_checkin": "2026-03-25",
+            "last_hourly_slot": 1774231200,
+            "loan": 0,
+            "boat_level": 20,
+            "rod_level": 20,
+            "blackjack_wins": 97,
+            "blackjack_pnl": 82101500,
+            "blackjack_games": 218,
+            "fixed_deposits": [
+                {
+                    "principal": 10000000,
+                    "term_days": 90,
+                    "rate": 1.2,
+                    "opened_at": "2026-03-23T16:49:25.086191",
+                    "mature_at": "2026-06-21T16:49:25.086191"
+                }
+            ],
+            "fish_skill_level": 20,
+            "fish_skill_exp": 100,
+            "fish_dex": {}
+        },
+        "854266115705667585": {
+            "coin": 12525275159,
+            "exp": 98,
+            "level": 1,
+            "stocks": {},
+            "boat_level": 20,
+            "rod_level": 20,
+            "loan": 0,
+            "last_hourly_slot": 1777636800,
+            "last_checkin": "2026-05-01",
+            "blackjack_wins": 1,
+            "blackjack_pnl": -61799712,
+            "blackjack_games": 2,
+            "fixed_deposits": [
+                {
+                    "principal": 1,
+                    "term_days": 1,
+                    "rate": 0.1,
+                    "opened_at": "2026-03-24T11:00:08.022549",
+                    "mature_at": "2026-03-25T11:00:08.022549"
+                }
+            ],
+            "fish_skill_level": 20,
+            "fish_skill_exp": 100,
+            "fish_dex": {}
+        },
+        "1321061361584832578": {
+            "coin": 9557287,
+            "exp": 108,
+            "level": 2,
+            "stocks": {},
+            "loan": 0,
+            "boat_level": 3,
+            "rod_level": 4,
+            "blackjack_pnl": -1200,
+            "blackjack_games": 4,
+            "bank_balance": 10000,
+            "last_hourly_slot": 1777633200,
+            "last_checkin": "2026-05-01",
+            "fixed_deposits": [],
+            "fish_skill_level": 1,
+            "fish_skill_exp": 89,
+            "fish_dex": {}
+        },
+        "1139040215189696513": {
+            "coin": 1070,
+            "exp": 178,
+            "level": 2,
+            "stocks": {},
+            "loan": 0
+        },
+        "1121342901348212776": {
+            "coin": 15349,
+            "exp": 9,
+            "level": 2,
+            "stocks": {},
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "last_hourly_slot": 1771686000,
+            "last_checkin": "2026-02-21"
+        },
+        "1150057606078025828": {
+            "coin": 1009,
+            "exp": 19,
+            "level": 1,
+            "stocks": {}
+        },
+        "1258303911761150023": {
+            "coin": 91349,
+            "exp": 83,
+            "level": 1,
+            "stocks": {},
+            "boat_level": 1,
+            "rod_level": 1,
+            "loan": 20000,
+            "last_checkin": "2026-02-18",
+            "last_hourly_slot": 1771394400
+        },
+        "584351305531654144": {
+            "coin": 1002,
+            "exp": 15,
+            "level": 1,
+            "stocks": {}
+        },
+        "1375528400785113142": {
+            "coin": 1154,
+            "exp": 230,
+            "level": 3,
+            "stocks": {},
+            "loan": 0
+        },
+        "1201887375664353323": {
+            "coin": 10016,
+            "exp": 41,
+            "level": 1,
+            "stocks": {},
+            "bank_balance": 0
+        },
+        "1100057980780675122": {
+            "coin": 11900,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1
+        },
+        "1449416191272816650": {
+            "coin": 139850,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "blackjack_pnl": 0,
+            "blackjack_games": 2,
+            "blackjack_wins": 1
+        },
+        "1456686589693657312": {
+            "coin": 3896120,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "last_hourly_slot": 1772694000,
+            "last_checkin": "2026-03-04",
+            "blackjack_wins": 7,
+            "blackjack_pnl": 3378750,
+            "blackjack_games": 11
+        },
+        "1012317304522018836": {
+            "coin": 1010354883,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "last_checkin": "2026-03-17",
+            "blackjack_pnl": -1610573833,
+            "blackjack_games": 43,
+            "blackjack_wins": 15
+        }
+    },
+    "1460057270141325580": {
+        "1096014500668375090": {
+            "coin": 23060,
+            "exp": 0,
+            "level": 1,
+            "stocks": {},
+            "last_hourly": 1771078299.496044,
+            "last_checkin": "2026-02-14"
+        }
+    },
+    "1472237159564972106": {
+        "1449416191272816650": {
+            "coin": 9999885000,
+            "exp": 0,
+            "level": 1,
+            "stocks": {}
+        }
+    },
+    "1294151989931802714": {
+        "1258303911761150023": {
+            "coin": 4282690,
+            "exp": 138,
+            "level": 3,
+            "stocks": {},
+            "last_hourly": 1771091781.480822,
+            "last_checkin": "2026-02-18",
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1
+        },
+        "1234077475173306439": {
+            "coin": 1373,
+            "exp": 127,
+            "level": 4,
+            "stocks": {},
+            "loan": 0
+        },
+        "1274763704067559545": {
+            "coin": 1050,
+            "exp": 73,
+            "level": 2,
+            "stocks": {}
+        },
+        "1279739940116234344": {
+            "coin": 10015,
+            "exp": 53,
+            "level": 1,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0
+        }
+    },
+    "861274546077171752": {
+        "763033832227078176": {
+            "coin": 10001500039999,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "last_hourly_slot": 1772704800,
+            "blackjack_pnl": 1500000000,
+            "blackjack_games": 1,
+            "blackjack_wins": 1
+        }
+    },
+    "1449416191272816650": {
+        "coin": 0,
+        "bank": 0
+    },
+    "1388354983270940822": {
+        "1321061361584832578": {
+            "coin": 20000,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "last_checkin": "2026-02-27"
+        }
+    },
+    "1419122638751531090": {
+        "1321061361584832578": {
+            "coin": 14850,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "blackjack_pnl": -150,
+            "blackjack_games": 1,
+            "last_hourly_slot": 1772679600
+        }
+    },
+    "1072427152324169790": {
+        "1321061361584832578": {
+            "coin": 9800,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "blackjack_pnl": -200,
+            "blackjack_games": 1
+        }
+    },
+    "1440284324841652309": {
+        "1321061361584832578": {
+            "coin": 9700,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "blackjack_pnl": -300,
+            "blackjack_games": 1
+        }
+    },
+    "1458967361192460484": {
+        "1321061361584832578": {
+            "coin": 15000,
+            "exp": 0,
+            "stocks": {},
+            "bank_balance": 0,
+            "loan": 0,
+            "boat_level": 1,
+            "rod_level": 1,
+            "last_hourly_slot": 1772589600
+        }
+    }
+}
